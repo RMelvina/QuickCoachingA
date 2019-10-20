@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#b6e1df">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+
+            android:id="@+id/image">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/sc_goal_14"
+                android:layout_centerHorizontal="true"/>
+
+
+        </RelativeLayout>
+
+
+
+    </RelativeLayout>
+
+</ScrollView>

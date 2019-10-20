@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/layout_drawer"
+    android:background="#b6e1df"
+    tools:context=".Goal_Question_3">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <include
+        layout="@layout/nav_toolbar"
+        android:id="@+id/toolbar"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/toolbar">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="My goals\n more detail"
+                android:textSize="24dp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:id="@+id/goal_1_text"
+                />
+
+            <TextView
+                android:layout_below="@+id/goal_1_text"
+                android:id="@+id/goal_question_3_box_1"
+                android:background="@drawable/button_shape"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="57dp"
+                android:gravity="bottom"
+                android:hint="A"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="57dp"
+                android:layout_below="@+id/goal_question_3_box_1"
+                android:background="@drawable/button_shape"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginLeft="30dp"
+                android:hint="So that/because:"
+                android:gravity="top"
+                android:id="@+id/goal_question_3_box_2"
+                />
+
+            <TextView
+                android:layout_below="@+id/goal_question_3_box_2"
+                android:id="@+id/goal_question_3_box_3"
+                android:background="@drawable/button_shape"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="57dp"
+                android:text="B"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="57dp"
+                android:layout_below="@+id/goal_question_3_box_3"
+                android:background="@drawable/button_shape"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginLeft="30dp"
+                android:hint="So that/because:"
+                android:gravity="top"
+                android:id="@+id/goal_question_3_box_4"
+                />
+
+            <TextView
+                android:id="@+id/text"
+                android:layout_below="@id/goal_question_3_box_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:textSize="20sp"
+                android:textColor="#fff"
+                android:text="If you can't identify deeper'why's', you can\n just click on the 'Next' button.However\n make sure, you have double checked and you\n really understand why you want to achieve\n your goal!"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/text"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/button_shape"
+                android:layout_marginRight="80dp"
+                android:layout_marginLeft="80dp"
+                android:text="NEXT"
+                android:textSize="20dp"
+                android:onClick="btn_next"
+                android:textColor="#84c2c8"/>
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:id="@+id/nav_view"
+        app:headerLayout="@layout/nav_drawer"
+        app:menu="@menu/toolbar_nav_drawer"
+        />
+
+
+
+</androidx.drawerlayout.widget.DrawerLayout>

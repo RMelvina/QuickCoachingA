@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SplashScreen"
+    android:background="#b6e1df">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="13dp"
+            android:layout_marginTop="12dp"
+            android:background="@android:color/white"/>
+
+
+        <View
+            android:layout_width="4dp"
+            android:layout_height="516dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="15dp"
+            android:background="@android:color/white"/>
+
+        <View
+            android:layout_width="4dp"
+            android:layout_height="516dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:background="@android:color/white"
+            android:layout_alignParentRight="true" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="14dp"
+            android:layout_marginTop="30dp"
+            android:layout_alignParentBottom="true"
+            android:background="@android:color/white"
+            android:layout_marginBottom="126dp"/>
+
+        <ImageView
+            android:layout_width="360dp"
+            android:layout_height="389dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/logo"
+            android:id="@+id/logo_image"
+            />
+
+
+        <Button
+            android:layout_width="200dp"
+            android:layout_height="60dp"
+            android:layout_centerInParent="true"
+            android:layout_below="@+id/logo_image"
+            android:layout_marginTop="60dp"
+            android:background="@drawable/button_shape"
+            android:text="START"
+            android:textColor="#a4c0c3"
+            android:fontFamily="@font/montserrat"
+            android:textStyle="bold"
+            android:onClick="btn_splash_screen_begin"
+            android:textSize="20dp"
+            android:id="@+id/btn_start"/>
+
+
+
+
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

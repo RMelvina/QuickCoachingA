@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/layout_drawer"
+    android:fitsSystemWindows="true"
+    android:background="#bfdfe2"
+    tools:context=".Goal_Question_5">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            layout="@layout/nav_toolbar"
+            android:id="@+id/toolbar"/>
+
+
+        <RelativeLayout
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_below="@id/toolbar">
+
+
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/arrow_up" >
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="90dp"
+                    android:background="@drawable/arrow_up"
+
+                    />
+
+            </LinearLayout>
+
+
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="379dp"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/arrow_down"
+
+                >
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_gravity="center"
+                    android:layout_height="90dp"
+                    android:background="@drawable/icon_arrow_down"
+                    />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/toolbar"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/goal_layout"
+            android:layout_marginRight="30dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="60dp">
+
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="400dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/steps_layouts"
+                        android:orientation="vertical">
+
+                        <EditText
+                            android:layout_width="220dp"
+                            android:layout_height="60dp"
+                            android:hint="GOAL:"
+                            android:fontFamily="@font/montserrat"
+                            android:textColor="#326b6f"
+                            android:textSize="23dp"
+                            android:id="@+id/display_goal_step_txt_box"
+                            android:background="@android:color/white"/>
+
+                        <EditText
+                            android:layout_width="220dp"
+                            android:layout_height="60dp"
+                            android:layout_marginTop="10dp"
+                            android:hint="To do this first I must....."
+                            android:fontFamily="@font/montserrat"
+                            android:textAlignment="center"
+                            android:id="@+id/edit_text_box_2"
+                            android:textColor="#326b6f"
+                            android:background="@android:color/white"/>
+
+
+
+                    </LinearLayout>
+
+                </ScrollView>
+
+            </LinearLayout>
+
+
+
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginRight="40dp"
+            android:id="@+id/bototm_text"
+            android:gravity="center">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="@android:color/white"
+                android:fontFamily="@font/montserrat"
+                android:text="MY ROADMAP"
+                android:textSize="20dp"
+                android:textAlignment="center" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@id/goal_layout"
+            android:orientation="horizontal"
+            android:layout_marginTop="29dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginRight="40dp"
+            android:id="@+id/bototm_icon"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="46dp"
+                android:layout_height="40dp"
+                android:background="@drawable/hazardicon"
+                android:id="@+id/hazard_icon_1" />
+
+            <ImageView
+                android:layout_width="46dp"
+                android:layout_height="40dp"
+                android:background="@drawable/hazardicon"
+                android:id="@+id/hazard_icon_2"
+                android:layout_toRightOf="@+id/hazard_icon_1"/>
+
+            <ImageView
+                android:layout_width="46dp"
+                android:layout_height="40dp"
+                android:background="@drawable/hazardicon"
+                android:id="@+id/hazard_icon_3"
+                android:layout_toRightOf="@+id/hazard_icon_2"/>
+
+            <ImageView
+                android:layout_width="46dp"
+                android:layout_height="40dp"
+                android:background="@drawable/hazardicon"
+                android:id="@+id/hazard_icon_4"
+                android:layout_toRightOf="@+id/hazard_icon_3"/>
+
+
+
+
+
+
+
+
+        </RelativeLayout>
+
+
+
+
+        <Button
+            android:layout_width="230dp"
+            android:layout_height="50dp"
+            android:background="@drawable/button_shape"
+            android:text="NEXT"
+            android:layout_marginTop="589dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="60dp"
+            android:layout_marginRight="60dp"
+            android:textColor="#326b6f"
+            android:fontFamily="@font/montserrat"
+            android:textSize="28dp"
+            android:onClick="btn_next"
+            />
+
+
+
+
+
+
+    </RelativeLayout>
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:id="@+id/nav_view"
+        app:headerLayout="@layout/nav_drawer"
+        app:menu="@menu/toolbar_nav_drawer"
+        />
+
+</androidx.drawerlayout.widget.DrawerLayout>

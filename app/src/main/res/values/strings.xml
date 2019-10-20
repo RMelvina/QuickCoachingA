@@ -1,3 +1,216 @@
 <resources>
     <string name="app_name">CoachingApp</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="title_activity_nav_drawer">NavDrawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_tools">Tools</string>
+    <string name="menu_share">Share</string>
+
+
+    -------Custom_Dialog_Box_One-------
+
+    <string name="DialogBoxGoalHelp_text_1">
+
+        Facing all the challenges at once can be a bit daunting, so try just working one at a time. Then have break and come back to it.\n\n
+        Alternatively we recommend going to youtube (if your country internet allows this) and typing in the search criteria\n\n
+        \"People are awesome\"
+        There is an entire channel of videos that feature people doing truly amazing things. Watch one of the videos. Look at just what can be achieved by us mortal human beings and then come back this exercise\n\n
+        If you are stuck for which video to watch then try this link which will take you one the many beautiful and inspiring videos of human achievement.\n\n
+    </string>
+
+
+    <string name="link">
+         <a href="https://www.youtube.com/watch?v=AVn-Yjr7kDc&amp;t=7s">Click me!</a>\n\n
+    </string>
+
+    <string name="DialogBoxGoalHelp_text_2">
+        If you can’t access sites like youtube then take a break and listen some music that inspires you and makes you feel good or look at a picture that makes you feel calm and  in a good place’ whether it’s a mountain, a beach, your favourite car or a loved one (we are all different).\n\n
+        Do Something to reset your mental state. Trust us.. It makes a big difference.
+    </string>
+
+    -------Custom_Dialog_Box_Two-------
+
+    <string name="Custom_Dialog_Box_Text_Two">
+
+
+        "Often when we describe a problem we describe the symptoms instead of the underlying problem that it is causing the symptom/issue.
+
+    </string>
+
+    <string name="Custom_Dialog_Box_Text_Three">
+
+
+        For example a symptom might be “my staff members performance is very poor but I cannot talk to them about it because they accuse me of bullying them”
+
+    </string>
+
+    <string name="Custom_Dialog_Box_Text_Four">
+        Whilst the underlying problem could be “I have a really bad relationship with my staff member, there is a mutual distrust and it means everything is a fight” or “from what I can see, if a staff member accuses a manager of bullying, my company will always back the staff member and punish the manager”
+        "You can click ‘Next’ now, but you may want to take this opportunity to double check you have noted down the specific underlying problem or issue, not just a symptom.
+
+    </string>
+
+    <string name="Custom_Dialog_Box_Text_Fiver">
+
+        "You can click ‘Next’ now, but you may want to take this opportunity to double check you have noted down the specific underlying problem or issue, not just a symptom.
+
+    </string>
+
+
+    -------Custom_Dialog_Box_Three-------
+    <string name="Custom_Dialog_Box_Three_Text_One">
+
+        It is ok if it is, we just need to double check this before we continue to make sure we help in the right way
+
+    </string>
+
+    <string name="Custom_Dialog_Box_Three_Text_Two">
+
+       10 Death\n\n
+
+       9 In danger of death\n\n
+
+       8 You are about to become homeless or experience a full mental/health breakdown\n\n
+
+       7 You may be about to lose your job or get a divorce if this issue is not resolve successfully\n\n
+
+    </string>
+
+
+    -------User_Dashboard-------
+    <string name="User_Dashboard_Text_One">
+        We provide Business Psychology Consultancy and Training services.
+    </string>
+
+
+    -------About_Us-------
+
+    <string name="About_Us_Text_One">
+        "&quot; Sometimes we just need someone to help us see what we already know - but are too busy or stressed to realise.&quot;"
+
+    </string>
+
+    <string name="About_Us_Text_Two">
+        This \'Quick Coaching\' App we will ask you some questions that will help you find perspective and solutions for tour problem, or help you plan to achieve your goal
+
+    </string>
+
+
+    -------Play_Back_Summary-------
+    <string name="Play_Back_Summary_1">
+        Why do you want to overcome or resolve this issue?
+    </string>
+
+    <string name="Play_Back_Summary_2">
+       What do you feel is at stake here?
+    </string>
+
+
+    <string name="Play_Back_Summary_3">
+       Issue or problem is appropriate?
+    </string>
+
+
+    <string name="Play_Back_Summary_4">
+        How could you influence or improve the situation? (If you chose to)\n
+        Explain?
+
+
+    </string>
+
+
+    <string name="Play_Back_Summary_5">
+       Improvements
+    </string>
+
+
+    <string name="Play_Back_Summary_6">
+     How will going through this situation make you stronger and wiser?
+    </string>
+
+    <string name="Play_Back_Summary_7">
+      What are the implications
+    </string>
+
+
+    <string name="Play_Back_Summary_8">
+     What positives can take from this situation?
+    </string>
+
+
+    -------Ask_Your_Self-------
+
+    <string name="Ask_your_self_pg_1">
+
+        1.) What…specifically…is the challenge here?
+
+    </string>
+
+
+    <string name="Ask_your_self_pg_2">
+
+        2.) What can I do or put in place, to male this challenge easier?
+
+    </string>
+
+    <string name="Ask_your_self_pg_3">
+
+        3.) What would be the first step in doing that?
+
+    </string>
+
+
+    <string name="Ask_your_self_pg_4">
+
+        4.) Is there anyone who can help me?, Is there anyone I know who would find this much easier? if there is - what would they do differently?
+
+    </string>
+
+
+    <string name="Ask_your_self_pg_5">
+
+        5.) Can I do that? (the action that someone else would take) - if not, what would need to change so I could do that
+
+    </string>
+
+    <string name="Ask_your_self_pg_6">
+
+        6.) Am I missing any information here?
+            If so what is it and where can I get it from?
+    </string>
+
+
+    -------Last_Question-------
+
+    <string name="Last_Question">
+        (Make sure this is a precise timing point such as "Monday at 9:00am". Answers such as "as soon as possible" will not help you much.
+        The more specific you can get the date and time the more likely you are to actually do this)
+
+    </string>
+
+    -------Display_Summary-------
+    <string name="Summary_1">
+
+        You have identified the challenges, how to overcome them and you plan to start your first action on:
+
+
+    </string>
+
+    <string name="Summary_2">
+
+        If you are still unsure why not reach out the wider leadership community on this app. We have some great moderators and friendly experts ready to help.
+
+
+    </string>
+
+
+
+
 </resources>

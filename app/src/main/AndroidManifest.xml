@@ -9,13 +9,74 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".Goal_DisplaySummary"></activity>
+        <activity android:name=".LastQuestion" />
+        <activity android:name=".Goal_Question_8_Part_2" />
+        <activity android:name=".Goal_Question_8_Part_1" />
+        <activity android:name=".Goal_Question_8" />
+        <activity android:name=".Goal_16" />
+        <activity android:name=".Goal_15" />
+        <activity android:name=".Goal_Question_7" />
+        <activity android:name=".Goal_Question_6" />
+        <activity android:name=".Goal_14" />
+        <activity android:name=".Goal_Question_5" />
+        <activity android:name=".Goal_13" />
+        <activity android:name=".Goal_Custom_1" />
+        <activity android:name=".Goal_Question_4" />
+        <activity android:name=".Goal_12" />
+        <activity android:name=".Goal_11" />
+        <activity android:name=".Goal_10" />
+        <activity android:name=".Goal_9" />
+        <activity android:name=".Goal_8" />
+        <activity android:name=".Goal_7" />
+        <activity android:name=".Goal_Question_3" />
+        <activity android:name=".Goal_6" />
+        <activity android:name=".Goal_5" />
+        <activity android:name=".Goal_4" />
+        <activity android:name=".Goal_3" />
+        <activity android:name=".Goal_Question_2" />
+        <activity android:name=".Goal_2" />
+        <activity android:name=".Goal_Question_1" />
+        <activity android:name=".Goal_1" />
+        <activity android:name=".IP_Question_Two_Part_Two" />
+        <activity android:name=".IP_QuestionTwo_Part_one" />
+        <activity android:name=".IP_Question_Display_Summary" />
+        <activity android:name=".IP_Question_16" />
+        <activity android:name=".IP_Question_15" />
+        <activity android:name=".IP_Question_14" />
+        <activity android:name=".IP_Question_13" />
+        <activity android:name=".IP_Question_12" />
+        <activity android:name=".IP_Question_11" />
+        <activity android:name=".IP_Question_10" />
+        <activity android:name=".IP_Question_9" />
+        <activity android:name=".IP_QuestionEight" />
+        <activity android:name=".IP_QuestionSeven" />
+        <activity android:name=".IP_QuestionSix" />
+        <activity android:name=".IP_Question_Five_Part_Two" />
+        <activity android:name=".IP_Question_Five_Part_One" />
+        <activity android:name=".IP_Question_Five" />
+        <activity android:name=".IP_QuestionFour" />
+        <activity android:name=".IP_QuestionThree" />
+        <activity android:name=".IP_QuestionTwo" />
+        <activity android:name=".IP_QuestionOne" />
+        <activity android:name=".QuickCoachingOptions" />
+        <activity android:name=".AboutUs" />
+        <activity android:name=".RegisterUser" />
+        <activity android:name=".UserDashboard" />
+        <activity android:name=".Login" />
+        <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

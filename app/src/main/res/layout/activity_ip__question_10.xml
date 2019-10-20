@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".IP_Question_10"
+    android:fitsSystemWindows="true"
+    android:id="@+id/layout_drawer"
+    android:background="#b6e1df">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            layout="@layout/nav_toolbar"
+            android:id="@+id/toolbar"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/toolbar">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:id="@+id/text"
+                android:text="Effective responses so far?"/>
+
+            <TextView
+                android:layout_below="@id/text"
+                android:id="@id/text_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:textSize="20sp"
+                android:textColor="#fff"
+                android:text="Effective means your response worked and helped to resolve the issue.\n\n There is a big difference between a response that emotionally feels right and a response that actually helps!"
+                />
+
+            <LinearLayout
+                android:layout_below="@id/text_2"
+                android:id="@+id/vote"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_marginLeft="70dp"
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/yes"/>
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/button_yes"
+                        android:onClick="btn_yes"
+                        android:textSize="30dp"
+                        android:text="Yes"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginLeft="50dp"
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/no"/>
+
+                    <Button
+                        android:id="@+id/button_no"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="No"
+                        android:textSize="30dp"
+                        android:onClick="btn_no"/>
+
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_below="@id/vote"
+                android:id="@+id/txt_view"
+                android:gravity="center"
+                android:text="1"
+                android:textSize="10sp"
+                android:layout_margin="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_below="@id/txt_view"
+                android:background="@drawable/button_shape"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:hint="Please explain: (you will need to input at least a brief explanation before you can continue to the next coaching question)"
+                android:gravity="top"
+                android:id="@+id/effective_response_text_box_1"
+                />
+
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/effective_response_text_box_1"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/button_shape"
+                android:layout_marginRight="80dp"
+                android:layout_marginLeft="80dp"
+                android:text="NEXT"
+                android:textSize="20dp"
+                android:onClick="btn_nex_nextt"
+                android:textColor="#84c2c8"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:id="@+id/nav_view"
+        app:headerLayout="@layout/nav_drawer"
+        app:menu="@menu/toolbar_nav_drawer"
+        />
+
+</androidx.drawerlayout.widget.DrawerLayout>

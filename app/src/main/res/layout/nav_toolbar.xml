@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white">
+
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:text="Da Vinci’s Workshop"
+        android:textColor="#84c2c8"
+        android:textStyle="bold"
+        android:textSize="20dp"
+
+        />
+
+
+    <ImageButton
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/iconmenu"
+        android:layout_marginLeft="255dp"
+        android:id="@+id/open_drawer_icon"
+        />
+
+
+</androidx.appcompat.widget.Toolbar>

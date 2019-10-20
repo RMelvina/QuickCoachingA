@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".IP_Question_14"
+    android:fitsSystemWindows="true"
+    android:id="@+id/layout_drawer"
+    android:background="#b6e1df">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            layout="@layout/nav_toolbar"
+            android:id="@+id/toolbar"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/toolbar">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:id="@+id/text"
+                android:text="Stronger and Wiser"/>
+
+            <LinearLayout
+                android:id="@+id/imagetext"
+                android:layout_below="@id/text"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="#fff"
+                    android:text="What about this situation make you stronger and wiser?"
+                    android:layout_below="@id/icon_people_talk"
+                    android:textSize="24dp"
+                    android:gravity="center"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/question_1"
+                    />
+                <ImageView
+                    android:layout_below="@id/text"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:background="@drawable/mind"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:id="@+id/icon_people_talk"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/imagetext_2"
+                android:orientation="vertical"
+                android:layout_below="@id/imagetext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#fff"
+                    android:textSize="17sp"
+                    android:layout_marginLeft="20dp"
+                    android:text="What does not kill us, makes us stronger\n\n Not strictly true, but a nice idea.\n Smart people learn from their\n experiences so that the next\n time they encounter a similar\n situation - they can manage it in\n an easier and more successful way."/>
+
+
+            </LinearLayout>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_below="@id/imagetext_2"
+                android:background="@drawable/button_shape"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:hint="If I can influence or improve the situation then…"
+                android:gravity="top"
+                android:id="@+id/stronger_wiser_text_box"
+                />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/stronger_wiser_text_box"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/button_shape"
+                android:layout_marginRight="80dp"
+                android:layout_marginLeft="80dp"
+                android:text="NEXT"
+                android:textSize="20dp"
+                android:onClick="btn_next"
+                android:textColor="#84c2c8"/>
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:id="@+id/nav_view"
+        app:headerLayout="@layout/nav_drawer"
+        app:menu="@menu/toolbar_nav_drawer"
+        />
+
+
+
+</androidx.drawerlayout.widget.DrawerLayout>

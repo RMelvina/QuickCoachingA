@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:id="@+id/layout_drawer"
+    android:background="#b6e1df"
+    tools:context=".Goal_15">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            layout="@layout/nav_toolbar"
+            android:id="@+id/toolbar"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/toolbar">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/toolbar"
+            android:id="@+id/image">
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@drawable/sc_goal_18_part_1"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="24dp"
+                android:id="@+id/img_1"/>
+
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="90dp"
+                android:background="@drawable/iconimgyourtube"
+                android:layout_below="@id/img_1"
+                android:layout_centerHorizontal="true"
+                android:onClick="gotourl"
+                android:id="@+id/img_2"
+                android:layout_marginTop="20dp"/>
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:background="@drawable/sc_goal_18_part_2"
+                android:layout_below="@id/img_2"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/img_3"
+                android:layout_marginTop="20dp"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/img_3"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/button_shape"
+                android:layout_marginRight="80dp"
+                android:layout_marginLeft="80dp"
+                android:text="NEXT"
+                android:textSize="20dp"
+                android:onClick="btn_goal_9_next"
+                android:textColor="#84c2c8"/>
+
+
+
+
+
+
+        </RelativeLayout>
+
+        </ScrollView>
+
+
+
+    </RelativeLayout>
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:id="@+id/nav_view"
+        app:headerLayout="@layout/nav_drawer"
+        app:menu="@menu/toolbar_nav_drawer"
+        />
+
+</androidx.drawerlayout.widget.DrawerLayout>
