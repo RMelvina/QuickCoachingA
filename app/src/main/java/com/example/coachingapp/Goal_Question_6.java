@@ -7,17 +7,16 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
+import android.provider.ContactsContract;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TableLayout;
+import android.widget.TextView;
 
+import com.example.coachingapp.Models.Goals_Road_Map;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -25,13 +24,15 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.GenericTypeIndicator;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
-public class Goal_Question_6 extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+public class Goal_Question_6 extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     ImageButton imageIconRight;
     DrawerLayout drawerLayout;
@@ -46,11 +47,12 @@ public class Goal_Question_6 extends AppCompatActivity implements NavigationView
     DatabaseReference myRef;
     FirebaseUser user;
 
-//    List<String> etText = new ArrayList<String>();
-//    List<EditText> myLists = new ArrayList<EditText>();
-//
-//    List<String> g ;
-//    int len;
+
+
+    int len;
+
+
+
 
 
     @Override
@@ -58,34 +60,56 @@ public class Goal_Question_6 extends AppCompatActivity implements NavigationView
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_goal__question_6);
         nav();
-        setTimer();
 
-//        etText = new ArrayList<>();
-        mLayout = findViewById(R.id.steps_layouts);
+
+
+        mLayout = findViewById(R.id.steps_layout_layout);
         editText = findViewById(R.id.title_1);
 
-//        g = new ArrayList<>();
-//        g = (List<String>) getIntent().getSerializableExtra("Goals");
-//        len = g.size();
+
 
         firebaseAuth = FirebaseAuth.getInstance();
         user = firebaseAuth.getCurrentUser();
         myRef = FirebaseDatabase.getInstance().getReference();
         database = FirebaseDatabase.getInstance();
 
-//        displayText();
 
-        Query query = myRef.child("users").child(user.getUid());
+
+
+        Query query =myRef.child("users").child(user.getUid()).child("Goals").child("Steps").child("answers");
+
+         Query query1 = myRef.child("users").child(user.getUid());
+
+
+
+
+
         query.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                List<String> goalsList = new ArrayList<>();
 
-                String day = dataSnapshot.child("Goals").child("input_1").getValue().toString();
-                editText.setText(day);
+//                String goal = dataSnapshot.child("input_1").child("user_input_1").getValue().toString();
+//                editText.setText(goal);
 
 
+                for (DataSnapshot ds: dataSnapshot.getChildren()){
+                    String s = ds.getValue(String.class);
+                    goalsList.add(s);
+                }
 
+                len = goalsList.size();
 
+                for (int i = 0; i < len; i++){
+
+                    EditText ed = new EditText(Goal_Question_6.this);
+                    ed.setText(goalsList.get(i).toString());
+                    TableLayout.LayoutParams layoutParams = new TableLayout.LayoutParams();
+                    ed.setBackground(getDrawable(R.drawable.text_box));
+                    ed.setLayoutParams(layoutParams);
+                    layoutParams.setMargins(0, 30, 0, 10);
+                    mLayout.addView(ed);
+                }
 
             }
 
@@ -95,26 +119,40 @@ public class Goal_Question_6 extends AppCompatActivity implements NavigationView
             }
         });
 
-    }
-
-    public void setTimer(){
-        final Button button = (Button)findViewById(R.id.btn_next_my_rd_map_2);
-        final Animation animation = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.slide_in);
-
-
-        new Handler().postDelayed(new Runnable() {
+        query1.addValueEventListener(new ValueEventListener() {
             @Override
-            public void run() {
-                button.setVisibility(View.VISIBLE);
-                button.startAnimation(animation);
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String s = dataSnapshot.child("Goals").child("input_1").child("user_input_1").getValue().toString();
+                editText.setText(s);
+            }
 
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
-        },5000);
+        });
+
+
     }
 
+//    public void setTimer(){
+//        final Button button = (Button)findViewById(R.id.btn_next_my_rd_map_2);
+//        final Animation animation = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.slide_in);
+//
+//
+//        new Handler().postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//                button.setVisibility(View.VISIBLE);
+//                button.startAnimation(animation);
+//
+//
+//            }
+//        },5000);
+//    }
 
-    private void nav(){
+
+    private void nav() {
         drawerLayout = findViewById(R.id.layout_drawer);
         imageIconRight = findViewById(R.id.open_drawer_icon);
 
@@ -125,9 +163,9 @@ public class Goal_Question_6 extends AppCompatActivity implements NavigationView
         imageIconRight.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(drawerLayout.isDrawerOpen(navigationView)){
+                if (drawerLayout.isDrawerOpen(navigationView)) {
                     drawerLayout.closeDrawer(navigationView);
-                }else if(!drawerLayout.isDrawerOpen(navigationView)){
+                } else if (!drawerLayout.isDrawerOpen(navigationView)) {
                     drawerLayout.openDrawer(navigationView);
                 }
             }
@@ -136,7 +174,7 @@ public class Goal_Question_6 extends AppCompatActivity implements NavigationView
 
     }
 
-    private void singOut(){
+    private void singOut() {
         FirebaseAuth.getInstance().signOut();
         finish();
         startActivity(new Intent(this, Login.class));
@@ -146,7 +184,7 @@ public class Goal_Question_6 extends AppCompatActivity implements NavigationView
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
 
-        switch (menuItem.getItemId()){
+        switch (menuItem.getItemId()) {
             case R.id.nav_aboutus:
 
                 Intent aboutUs = new Intent(getApplicationContext(), AboutUs.class);
@@ -172,28 +210,9 @@ public class Goal_Question_6 extends AppCompatActivity implements NavigationView
         startActivity(intent);
     }
 
-//    private void displayText(){
-//
-//
-//
-//        EditText[] et = new EditText[len];
-//        for(int i = 0; i <len; i++) {
-//            EditText ed = new EditText(Goal_Question_6.this);
-//            ed.setText(g.get(i).toString());
-//            TableLayout.LayoutParams layoutParams = new TableLayout.LayoutParams();
-//            mLayout.addView(ed);
-//            ed.setBackground(getDrawable(R.drawable.text_box));
-//            layoutParams.setMargins(0, 30, 0, 10);
-//            ed.setLayoutParams(layoutParams);
-//            et[i] = ed;
-//
-//        }
-//
-//
-//
-//
-//
-//
 
-    }
+
+
+
+}
 

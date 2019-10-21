@@ -252,7 +252,7 @@ public class Goal_Question_4 extends AppCompatActivity implements NavigationView
             ed.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT));
             mLayout.addView( ed);
 
-            myList.add( ed);
+            myList.add(ed);
 
             layoutParams.setMargins(0, 30, 0, 10);
             ed.setBackground(getDrawable(R.drawable.text_box));

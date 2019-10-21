@@ -165,28 +165,32 @@
                 android:layout_width="46dp"
                 android:layout_height="40dp"
                 android:background="@drawable/hazardicon"
-                android:id="@+id/hazard_icon_1" />
+                android:id="@+id/i1"
+                />
 
             <ImageView
                 android:layout_width="46dp"
                 android:layout_height="40dp"
                 android:background="@drawable/hazardicon"
-                android:id="@+id/hazard_icon_2"
-                android:layout_toRightOf="@+id/hazard_icon_1"/>
+                android:id="@+id/i2"
+                android:layout_toRightOf="@+id/i1"
+               />
 
             <ImageView
                 android:layout_width="46dp"
                 android:layout_height="40dp"
                 android:background="@drawable/hazardicon"
-                android:id="@+id/hazard_icon_3"
-                android:layout_toRightOf="@+id/hazard_icon_2"/>
+                android:id="@+id/i3"
+                android:layout_toRightOf="@+id/i2"
+               />
 
             <ImageView
                 android:layout_width="46dp"
                 android:layout_height="40dp"
                 android:background="@drawable/hazardicon"
-                android:id="@+id/hazard_icon_4"
-                android:layout_toRightOf="@+id/hazard_icon_3"/>
+                android:id="@+id/i4"
+                android:layout_toRightOf="@+id/i3"
+               />
 
 
 

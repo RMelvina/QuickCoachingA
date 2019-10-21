@@ -43,7 +43,7 @@
                     android:layout_width="250dp"
                     android:layout_height="wrap_content"
                     android:textColor="#fff"
-                    android:text="you will need to write something in both text boxes in order to progress to the next coaching question"
+                    android:text="you will need to enter text into this boxbefore you can continue to the next question"
                     android:layout_below="@id/icon_people_talk"
                     android:textSize="24dp"
                     android:gravity="center"

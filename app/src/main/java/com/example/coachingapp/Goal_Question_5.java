@@ -5,14 +5,22 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.ClipData;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.text.InputType;
+import android.text.Spannable;
+import android.text.SpannableStringBuilder;
+import android.text.style.ImageSpan;
+import android.view.DragEvent;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TableLayout;
 
@@ -44,7 +52,9 @@ public class Goal_Question_5 extends AppCompatActivity implements NavigationView
     EditText editText;
     LinearLayout mLayout;
 
-    List<String> etText = new ArrayList<String>();
+    ImageView i1, i2, i3, i4;
+
+//    List<String> etText = new ArrayList<String>();
     List<EditText> myLists = new ArrayList<EditText>();
 
     List<String> g ;
@@ -56,7 +66,7 @@ public class Goal_Question_5 extends AppCompatActivity implements NavigationView
         setContentView(R.layout.activity_goal__question_5);
         nav();
 
-        etText = new ArrayList<>();
+       // etText = new ArrayList<>();
         mLayout = findViewById(R.id.steps_layouts);
         editText = findViewById(R.id.display_goal_step_txt_box);
 
@@ -72,6 +82,20 @@ public class Goal_Question_5 extends AppCompatActivity implements NavigationView
 
 
 
+        i1 = (ImageView) findViewById(R.id.i1);
+        i2 = (ImageView) findViewById(R.id.i2) ;
+        i3 = (ImageView) findViewById(R.id.i3);
+        i4 = (ImageView) findViewById(R.id.i4) ;
+
+        i1.setBackgroundResource(R.drawable.hazardicon);
+
+        i1.setOnLongClickListener(longClickListener);
+
+
+
+
+
+
 
 
         firebaseAuth = FirebaseAuth.getInstance();
@@ -80,7 +104,8 @@ public class Goal_Question_5 extends AppCompatActivity implements NavigationView
         database = FirebaseDatabase.getInstance();
 
 
-        displayText();
+        displayText(g);
+
 
         Query query = myRef.child("users").child(user.getUid());
         query.addValueEventListener(new ValueEventListener() {
@@ -101,7 +126,96 @@ public class Goal_Question_5 extends AppCompatActivity implements NavigationView
 
             }
         });
+
+
+
+//        i1.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                inText(i1.getDrawable());
+//            }
+//        });
+//
+//
+//        i2.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                inText(i2.getDrawable());
+//            }
+//        });
+//
+//
+//        img3.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                inText(img3.getDrawable());
+//            }
+//        });
+//
+//        img4.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                inText(img4.getDrawable());
+//            }
+//        });
+
+
+
+
     }
+
+    View.OnLongClickListener longClickListener = new View.OnLongClickListener() {
+        @Override
+        public boolean onLongClick(View v) {
+
+            ClipData clipData = ClipData.newPlainText("","");
+            View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(v);
+            v.startDragAndDrop(clipData, shadowBuilder, v, 0);
+
+            return true;
+        }
+    };
+
+
+    View.OnDragListener dragListener  = new View.OnDragListener() {
+        @Override
+        public boolean onDrag(View v, DragEvent event) {
+
+            int dragEvent = event.getAction();
+
+            switch (dragEvent){
+                case DragEvent.ACTION_DRAG_ENTERED:
+
+                    final View view = (View)event.getLocalState();
+
+                    if(view.getId() == R.id.i1){
+
+//                        EditText ed = new EditText(Goal_Question_5.this);
+//                        ed.setText("created");
+
+                    }else if (view.getId() == R.id.i2){
+
+
+
+                    }
+
+                    break;
+
+                case DragEvent.ACTION_DRAG_EXITED:
+                    break;
+                case DragEvent.ACTION_DROP:
+                   break;
+
+            }
+
+            return false;
+        }
+    };
+
+
+
+
+
 
     private void nav(){
         drawerLayout = findViewById(R.id.layout_drawer);
@@ -161,17 +275,31 @@ public class Goal_Question_5 extends AppCompatActivity implements NavigationView
         startActivity(intent);
     }
 
-    private void displayText(){
+    private void displayText(List<String> txt){
 
 
+        int EditTextCursor;
 
         EditText[] et = new EditText[len];
         for(int i = 0; i <len; i++) {
             EditText ed = new EditText(Goal_Question_5.this);
-            ed.setText(g.get(i).toString());
+            ed.setText(txt.get(i).toString());
+                    //g.get(i).toString());
+
+            //SpannableStringBuilder spannableStringBuilder ;
+
+
+
+            ed.animate()
+                    .x(ed.getX())
+                    .y(ed.getY())
+                    .setDuration(700)
+                    .start();
+
+            myLists.add(ed);
+            ed.setOnDragListener(dragListener);
             TableLayout.LayoutParams layoutParams = new TableLayout.LayoutParams();
             mLayout.addView(ed);
-
             ed.setBackground(getDrawable(R.drawable.text_box));
             layoutParams.setMargins(0, 30, 0, 10);
             ed.setLayoutParams(layoutParams);
@@ -180,10 +308,70 @@ public class Goal_Question_5 extends AppCompatActivity implements NavigationView
         }
 
 
-
-
-
-
-
     }
+
+
+//
+//           private void inText(Drawable drawableHolder){
+//            int EditTextCursor;
+//            SpannableStringBuilder spannableStringBuilder ;
+//           // drawableHolder.setBounds(0, 0, drawableHolder.getIntrinsicWidth(), drawableHolder.getIntrinsicHeight());
+//
+//          //  EditTextCursor =  ed.getSelectionStart();
+//
+//           // ed.setInputType(InputType.TYPE_NULL);
+//           // ed.setTextIsSelectable(true);
+//
+//          //  ed.getText().insert(EditTextCursor, ".");
+//           // EditTextCursor = ed.getSelectionStart();
+//
+//              for (EditText ed: myLists){
+//                  EditTextCursor =  ed.getSelectionStart();
+//                  ed.getText().insert(EditTextCursor, ".");
+//                  EditTextCursor = ed.getSelectionStart();
+//                  spannableStringBuilder = new SpannableStringBuilder(ed.getText());
+//
+//                  spannableStringBuilder.setSpan(new ImageSpan(drawableHolder),
+//                          EditTextCursor - ".".length(),
+//                          EditTextCursor,
+//                          Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+//                  );
+//                  ed.setText(spannableStringBuilder);
+//                  ed.setSelection(EditTextCursor);
+//
+//
+//
+//
+//              }
+////            spannableStringBuilder = new SpannableStringBuilder(ed.getText());
+////
+////
+////            spannableStringBuilder.setSpan(new ImageSpan(drawableHolder),
+////                    EditTextCursor - ".".length(),
+////                    EditTextCursor,
+////                    Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+////            );
+//
+////            ed.setText(spannableStringBuilder);
+////            ed.setSelection(EditTextCursor);
+//
+//    }
+////
+//    public void click_image_1(View view) {
+//         inText(i1.getDrawable());
+//    }
+//
+//    public void click_image_2(View view) {
+//        inText(i2.getDrawable());
+//    }
+//
+//    public void click_image_3(View view) {
+//        inText(i3.getDrawable());
+//    }
+//
+//
+//
+//    public void click_image_4(View view) {
+//        inText(i4.getDrawable());
+//    }
 }
